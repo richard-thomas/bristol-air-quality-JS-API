@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Bristol Air Quality 2015 (ArcGIS JS API)</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.19/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>var dojoConfig = { parseOnLoad:true };</script>
+    <script src="https://js.arcgis.com/3.19/"></script>
+    <script src="main.js"></script>
+
+</head>
+
+<body class="claro">
+    <div id="borderContainer" data-dojo-type="dijit/layout/BorderContainer"
+         data-dojo-props="design:'sidebar', gutters:false, liveSplitters:true">
+        <div id="mapDiv" data-dojo-type="dijit/layout/ContentPane"
+             data-dojo-props="splitter:true, region:'center'">
+            <div style="position:absolute; right:20px; top:10px; z-Index:999;">
+                <div data-dojo-type="dijit/TitlePane" 
+                     data-dojo-props="title:'Basemap', closable:false, open:false">
+                    <div data-dojo-type="dijit/layout/ContentPane"
+                         style="width:380px; height:280px; overflow:auto;">
+                        <div id="basemapGallery"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sideBarR" data-dojo-type="dijit/layout/ContentPane"
+             data-dojo-props="splitter:true, region:'right'">
+            <h3>Legend</h3>
+            <div id="legendDiv"></div>
+        </div>
+    </div>
+</body>
+</html>
