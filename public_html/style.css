@@ -16,7 +16,54 @@ html, body {
     height: 100%;
 }
 
-#sideBarR {
-    width: 200px;
+#btnLegendDiv {
+    position: relative;
+    float: right;
+    top: 60px;
+    z-Index: 999;
 }
 
+#btnBasemapDiv {
+    position: relative;
+    float: right;
+    top: 60px;
+    z-Index: 999;
+}
+
+#basemapGalleryWrapper {
+    position: absolute;
+    right: 85px;
+    top: 0px;
+    height: 100%;
+    z-Index: 999;
+}
+
+#basemapTitlePane {
+    height: 100%;  
+    overflow: auto; 
+}
+#basemapGalleryPane {
+    width: 240px;
+    height: 100%;
+    overflow: auto;
+}
+
+#basemapGallery {
+    height: 100%;
+}
+
+#legendWrapper {
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    z-Index: 999;
+}
+#legendTitlePane {
+    height: 100%;  
+    overflow: auto;
+}
+
+#legendPane {
+    width: 300px;
+}

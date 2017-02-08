@@ -1,4 +1,4 @@
-// global variable: useful while testing/debugging because the browser's
+// global variables useful while testing/debugging because the browser's
 // developer console can be used to interact with the map.
 var map;
 require([
@@ -11,6 +11,7 @@ require([
     "dijit/layout/BorderContainer",
     "dijit/layout/ContentPane",
     "dijit/TitlePane",
+    "dijit/form/Button",
     "dojo/domReady!"
     ], function(
         Map,
@@ -40,7 +41,7 @@ require([
         var legend = new Legend({
             map: map,
             layerInfos:(arcgisUtils.getLegendLayers(response))
-        }, "legendDiv");
+        }, "legend");
 
         legend.startup();                
     });
