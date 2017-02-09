@@ -16,6 +16,12 @@ html, body {
     height: 100%;
 }
 
+#sideBarR {
+    width: 300px;
+    padding: 0;
+    margin: 0;
+}
+
 #HomeButton {
     position: absolute;
     top: 95px;
