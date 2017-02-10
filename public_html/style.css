@@ -17,66 +17,36 @@ html, body {
 }
 
 #sideBarR {
+    /*display: none;*/
+    position: absolute;
+    height: 100%;
+    right: 0;
     width: 300px;
     padding: 0;
     margin: 0;
+    background-color: white;
+    z-Index: 20;
 }
 
 #HomeButton {
     position: absolute;
     top: 95px;
     left: 20px;
-    z-index: 50;
-}
-    
-#btnLegendDiv {
-    position: relative;
-    float: right;
-    top: 60px;
-    z-Index: 999;
+    z-Index: 50;
 }
 
-#btnBasemapDiv {
-    position: relative;
-    float: right;
-    top: 60px;
-    z-Index: 999;
-}
-
-#basemapGalleryWrapper {
+#buttonsR {
     position: absolute;
-    right: 85px;
-    top: 0px;
-    height: 100%;
-    z-Index: 999;
+    right: 10px;
+    top: 10px;
+    z-Index: 40;
 }
 
-#basemapTitlePane {
-    height: 100%;  
-    overflow: auto; 
-}
-#basemapGalleryPane {
-    width: 240px;
-    height: 100%;
-    overflow: auto;
-}
+/*#btnClose {
+    z-Index: 50; 
+}*/
 
-#basemapGallery {
-    height: 100%;
-}
+/*.displayButton {
+    z-Index: 40;
+}*/
 
-#legendWrapper {
-    position: absolute;
-    height: 100%;
-    right: 0px;
-    top: 0px;
-    z-Index: 999;
-}
-#legendTitlePane {
-    height: 100%;  
-    overflow: auto;
-}
-
-#legendPane {
-    width: 300px;
-}
