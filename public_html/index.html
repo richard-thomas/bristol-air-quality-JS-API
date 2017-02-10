@@ -21,43 +21,43 @@
 </head>
 
 <body class="claro">
-    <div id="borderContainer" data-dojo-type="dijit/layout/BorderContainer"
-         data-dojo-props="design:'sidebar', gutters:false, liveSplitters:true">
-        
-        <div id="mapDiv" data-dojo-type="dijit/layout/ContentPane"
-             data-dojo-props="splitter:true, region:'center'">
-            
-            <!--"Home" button: zoom/pan to default extent-->
-            <div id="HomeButton"></div>
-            
-            <div id="buttonsR">
-                <button id="btnBasemap" class="displayButton"
-                        data-dojo-type="dijit/form/Button">
-                    Basemap
-                </button>
-                <button id="btnLegend" class="displayButton"
-                        data-dojo-type="dijit/form/Button">
-                    Legend
-                </button>
-                <button id="btnLayers" class="displayButton"
-                        data-dojo-type="dijit/form/Button">
-                    Layers
-                </button>
-                <button id="btnClose" data-dojo-type="dijit/form/Button"
-                        style="z-Index:50;">
-                    X
-                </button>
-            </div>
-            <div id="sideBarR" data-dojo-type="dijit/layout/ContentPane"
-                  style="display:none;">                    
-                <div id="legend">Legend</div>
-                <div id="basemapGallery">Basemap</div>
-                <div id="layerList">Layers</div>
-            </div>
+    <div id="mapDiv" data-dojo-type="dijit/layout/ContentPane"
+         data-dojo-props="splitter:true, region:'center'">
 
+        <!--"Home" button: zoom/pan to default extent-->
+        <div id="HomeButton"></div>
+
+        <div id="buttonsR">
+            <button id="btnBasemap" class="displayButton"
+                    data-dojo-type="dijit/form/Button">
+                Basemap
+            </button>
+            <button id="btnLegend" class="displayButton"
+                    data-dojo-type="dijit/form/Button">
+                Legend
+            </button>
+            <button id="btnLayers" class="displayButton"
+                    data-dojo-type="dijit/form/Button">
+                Layers
+            </button>
         </div>
-    </div>        
+        <div id="sideBarR" style="display:none;">
+            <div id="sbHeader">
+                <p id="sbHeaderLabel"></p>
+                <div id="btnCloseDiv">
+                    <button id="btnClose" data-dojo-type="dijit/form/Button">
+                        X
+                    </button>
+                </div>
+            </div>
+            <div id="sbBody" data-dojo-type="dijit/layout/ContentPane">
+                <div class="sidebarContent" id="legend"></div>
+                <div class="sidebarContent" id="basemapGallery"></div>
+                <div class="sidebarContent" id="layerList"></div>
+            </div>
+        </div>
 
+    </div>
 </body>
 </html>
 

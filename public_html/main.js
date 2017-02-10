@@ -2,8 +2,7 @@
 // developer console can be used to interact with the map.
 var map;
 require([
-    "esri/map",
-    "esri/arcgis/utils", // for "esri/arcgis/utils"::createMap method
+    "esri/arcgis/utils",
     "esri/dijit/Legend",
     "esri/dijit/HomeButton",
     "esri/dijit/BasemapGallery",
@@ -11,14 +10,11 @@ require([
     "dojo/parser",
     "dojo/on",
 
-    "dijit/layout/BorderContainer",
-    "dijit/layout/TabContainer",
+    "esri/map",
     "dijit/layout/ContentPane",
-    "dijit/TitlePane",
     "dijit/form/Button",
     "dojo/domReady!"
     ], function(
-        Map,
         arcgisUtils,
         Legend,
         HomeButton,
@@ -29,50 +25,17 @@ require([
     ) {
         arcgisUtils.createMap(
             "0e2ff6096b2344028db18914af62d51b", // Bristol Air Quality webmap
-            //"1bf4e342273541d989bda03d4ee9276a", // Basemap offline test4
             "mapDiv").then(function (response) {
         map = response.map;
+
+        // Add Legend (to right sidebar)
+        var legend = new Legend({
+            map: map,
+            layerInfos:(arcgisUtils.getLegendLayers(response))
+        }, "legend");
+        legend.startup(); 
         
-        // Add "Home" button: zoom/pan to default extent
-        var home = new HomeButton({
-            map: map
-        }, "HomeButton");
-        home.startup();
-        
-        // Handle presses on Basemap button
-        on(document.getElementById('btnBasemap'), "click", function() {
-            console.log('Basemap button was clicked!');
-            document.getElementById('sideBarR').style.display = 'block';
-            document.getElementById('basemapGallery').style.display = 'block';
-            document.getElementById('legend').style.display = 'none';
-            document.getElementById('layerList').style.display = 'none';
-        });
-
-        // Handle presses on Legend button
-        on(document.getElementById('btnLegend'), "click", function() {
-            console.log('Legend button was clicked!');
-            document.getElementById('sideBarR').style.display = 'block';
-            document.getElementById('legend').style.display = 'block';
-            document.getElementById('basemapGallery').style.display = 'none';
-            document.getElementById('layerList').style.display = 'none';
-        });
-
-        // Handle presses on Layers button
-        on(document.getElementById('btnLayers'), "click", function() {
-            console.log('Layers button was clicked!');
-            document.getElementById('sideBarR').style.display = 'block';
-            document.getElementById('layerList').style.display = 'block';
-            document.getElementById('basemapGallery').style.display = 'none';
-            document.getElementById('legend').style.display = 'none';
-        });
-
-        // Handle presses on Close button ('X')
-        on(document.getElementById('btnClose'), "click", function() {
-            console.log('Close button was clicked!');
-            document.getElementById('sideBarR').style.display = 'none';
-        });
-
-        //add the basemap gallery, in this case we'll display maps from ArcGIS.com including bing maps
+        // Add Basemap Gallery (to right sidebar)
         var basemapGallery = new BasemapGallery({
             showArcGISBasemaps: true,
             map: map
@@ -82,18 +45,50 @@ require([
             console.log("basemap gallery error:  ", msg);
             });
 
-        var legend = new Legend({
-            map: map,
-            layerInfos:(arcgisUtils.getLegendLayers(response))
-        }, "legend");
-        legend.startup(); 
-        
+        // Add Layer List (to right sidebar)
         var layerList = new LayerList({
             map: map,
             layerInfos:(arcgisUtils.getLayerList(response))
         }, "layerList");
         layerList.startup(); 
+                        
+        // Add "Home" button: zoom/pan to default extent
+        var home = new HomeButton({
+            map: map
+        }, "HomeButton");
+        home.startup();
         
+        // Handle presses on Basemap button
+        on(document.getElementById('btnBasemap'), "click", function() {
+            document.getElementById('sbHeaderLabel').innerHTML = 'Basemap';
+            document.getElementById('sideBarR').style.display = 'block';
+            document.getElementById('basemapGallery').style.display = 'block';
+            document.getElementById('legend').style.display = 'none';
+            document.getElementById('layerList').style.display = 'none';
+        });
+
+        // Handle presses on Legend button
+        on(document.getElementById('btnLegend'), "click", function() {
+            document.getElementById('sbHeaderLabel').innerHTML = 'Legend';
+            document.getElementById('sideBarR').style.display = 'block';
+            document.getElementById('legend').style.display = 'block';
+            document.getElementById('basemapGallery').style.display = 'none';
+            document.getElementById('layerList').style.display = 'none';
+        });
+
+        // Handle presses on Layers button
+        on(document.getElementById('btnLayers'), "click", function() {
+            document.getElementById('sbHeaderLabel').innerHTML = 'Layers';
+            document.getElementById('sideBarR').style.display = 'block';
+            document.getElementById('layerList').style.display = 'block';
+            document.getElementById('basemapGallery').style.display = 'none';
+            document.getElementById('legend').style.display = 'none';
+        });
+
+        // Handle presses on Close button ('X')
+        on(document.getElementById('btnClose'), "click", function() {
+            document.getElementById('sideBarR').style.display = 'none';
+        });
     });
 });
 
