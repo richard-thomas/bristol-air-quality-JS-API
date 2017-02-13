@@ -1,0 +1,73 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#mapDiv {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#HomeButton {
+    position: absolute;
+    top: 95px;
+    left: 20px;
+    z-index: 50;
+}
+
+/* Group of buttons to display in temporary sidebar (on right) */
+#buttonsR {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+}
+
+/**** Sidebar (on right): Header, body and close button ****/
+#sideBarR {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid black;
+}
+#sbHeader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2em;
+    width: 100%;
+    padding-top: 0.5em;
+    margin: 0;
+    text-align: center;
+}
+#sbHeader p {
+    margin:0;
+    font-weight: bold;
+}
+#sbBody {
+    position: absolute;
+    top: 3em;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+}
+#btnCloseDiv {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 150;
+}
+.sidebarContent {
+    padding-left: 1em;
+    padding-right: 1em;
+}

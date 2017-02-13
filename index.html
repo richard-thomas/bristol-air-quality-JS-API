@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Bristol Air Quality 2015 (ArcGIS JS API)</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://js.arcgis.com/3.19/esri/css/esri.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/3.19/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>var dojoConfig = { parseOnLoad:true };</script>
+    <script src="https://js.arcgis.com/3.19/"></script>
+    <script src="main.js"></script>
+
+</head>
+
+<body class="claro">
+    <div id="mapDiv" data-dojo-type="dijit/layout/ContentPane">
+
+        <!--"Home" button: zoom/pan to default extent-->
+        <div id="HomeButton"></div>
+
+        <!-- Buttons to display in temporary sidebar -->
+        <div id="buttonsR">
+            <button id="btnBasemap" class="displayButton"
+                    data-dojo-type="dijit/form/Button">
+                Basemap
+            </button>
+            <button id="btnLegend" class="displayButton"
+                    data-dojo-type="dijit/form/Button">
+                Legend
+            </button>
+            <button id="btnLayers" class="displayButton"
+                    data-dojo-type="dijit/form/Button">
+                Layers
+            </button>
+        </div>
+        
+        <!-- Temporary sidebar and close button -->
+        <div id="sideBarR" style="display:none;">
+            <div id="sbHeader">
+                <p id="sbHeaderLabel"></p>
+                <div id="btnCloseDiv">
+                    <button id="btnClose" data-dojo-type="dijit/form/Button">
+                        X
+                    </button>
+                </div>
+            </div>
+            <div id="sbBody" data-dojo-type="dijit/layout/ContentPane">
+                <div class="sidebarContent" id="legend"></div>
+                <div class="sidebarContent" id="basemapGallery"></div>
+                <div class="sidebarContent" id="layerList"></div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
