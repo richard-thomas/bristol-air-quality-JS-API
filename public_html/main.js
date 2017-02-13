@@ -1,6 +1,3 @@
-// global variables useful while testing/debugging because the browser's
-// developer console can be used to interact with the map.
-var map;
 require([
     "esri/arcgis/utils",
     "esri/dijit/Legend",
@@ -26,7 +23,7 @@ require([
         arcgisUtils.createMap(
             "0e2ff6096b2344028db18914af62d51b", // Bristol Air Quality webmap
             "mapDiv").then(function (response) {
-        map = response.map;
+        var map = response.map;
 
         // Add Legend (to right sidebar)
         var legend = new Legend({
@@ -85,7 +82,7 @@ require([
             document.getElementById('legend').style.display = 'none';
         });
 
-        // Handle presses on Close button ('X')
+        // Handle presses on sidebar close button ('X')
         on(document.getElementById('btnClose'), "click", function() {
             document.getElementById('sideBarR').style.display = 'none';
         });

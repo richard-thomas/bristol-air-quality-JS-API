@@ -21,12 +21,12 @@
 </head>
 
 <body class="claro">
-    <div id="mapDiv" data-dojo-type="dijit/layout/ContentPane"
-         data-dojo-props="splitter:true, region:'center'">
+    <div id="mapDiv" data-dojo-type="dijit/layout/ContentPane">
 
         <!--"Home" button: zoom/pan to default extent-->
         <div id="HomeButton"></div>
 
+        <!-- Buttons to display in temporary sidebar -->
         <div id="buttonsR">
             <button id="btnBasemap" class="displayButton"
                     data-dojo-type="dijit/form/Button">
@@ -41,6 +41,8 @@
                 Layers
             </button>
         </div>
+        
+        <!-- Temporary sidebar and close button -->
         <div id="sideBarR" style="display:none;">
             <div id="sbHeader">
                 <p id="sbHeaderLabel"></p>
